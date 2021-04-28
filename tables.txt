@@ -1,0 +1,7 @@
+ 'employee': 'employee',
+ 'dependent': 'dependent'
+ 'department': 'department'
+ 'location': 'location'
+ 'country': 'country'
+ 'region': 'region'
+ 'job': 'job'
