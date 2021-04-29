@@ -72,7 +72,8 @@ print(emotion_list)
 
 table = []
 attr = []
-aggri = []
+aggregation_words = []
+agg = []
 with open('tables.txt', 'r') as file:
     for line in file:
         clear_line = line.replace("\n", '').replace(",", '').replace("'", '').strip()
@@ -96,9 +97,16 @@ with open('aggregation.txt', 'r') as file3:
         word, emotion = clear_line.split(':')
 
         if word in selective_pos_words:
-            aggri.append(emotion)
+           aggregation_words.append(emotion)
 
 
-print("select" + " (" + ' '.join(str(x) for x in aggri) + " )" + ' '.join(str(x) for x in attr))
-print("from" + ' '.join(str(x) for x in table))
+    if aggregation_words:
+        print("select" + " (" + ' '.join(str(x) for x in aggregation_words) + " )" + ' '.join(str(x) for x in attr))
+        print("from" + ' '.join(str(x) for x in table))
+
+    if not aggregation_words:
+        print("select" + ' '.join(str(x) for x in attr))
+        print("from" + ' '.join(str(x) for x in table))
+
+
 
