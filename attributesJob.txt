@@ -1,0 +1,4 @@
+'id': 'job_id'
+'title': 'job_title'
+'min': 'min_salary'
+'max': 'max_salary'

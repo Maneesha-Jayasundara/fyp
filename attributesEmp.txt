@@ -1,0 +1,7 @@
+'all': '*'
+'id': 'employee_id'
+'name': 'employee_name'
+'email': 'email'
+'phone': 'phone_number',
+'salary': 'salary'
+'hire': 'hire_Date',
