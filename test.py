@@ -48,7 +48,7 @@ result = cp.parse(pos)
 print(result)
 result.draw()
 
-selective_pos = ['NN', 'JJ', 'DT']
+selective_pos = ['NN', 'JJ', 'DT', 'CD']
 selective_pos_words = []
 for word, tag in pos:
     if tag in selective_pos:
@@ -92,12 +92,20 @@ if ' employee' in table:
                    aggregation_words.append(emotion)
 
             if aggregation_words:
-                print("select" + ' '.join(str(x) for x in aggregation_words) + " (" + ' '.join(str(x) for x in attrEmp) + " )")
-                print("from" + ' '.join(str(x) for x in table))
+                for word in aggregation_words:
+                    if ' COUNT' in aggregation_words:
+                         print("SELECT" + ' '.join(str(x) for x in aggregation_words) + "(employee_id )")
+                         print("FROM" + ' '.join(str(x) for x in table))
+
+                         for x in range(5):
+                             print(x, end=",")
+                    else:
+                        print("SELECT" + ' '.join(str(x) for x in aggregation_words) + "(" + ''.join(str(x) for x in attrEmp) + " )")
+                        print("FROM" + ' '.join(str(x) for x in table))
 
             if not aggregation_words:
-                print("select" + ' '.join(str(x) for x in attrEmp))
-                print("from" + ' '.join(str(x) for x in table))
+                print("SELECT" + ','.join(str(x) for x in attrEmp))
+                print("FROM" + ' '.join(str(x) for x in table))
 
 elif ' department' in table:
     attrDept = []
@@ -121,12 +129,18 @@ elif ' department' in table:
                    print(aggregation_words)
 
             if aggregation_words:
-                print("select" + ' '.join(str(x) for x in aggregation_words) + " (" + ' '.join(str(x) for x in attrDept) + " )")
-                print("from" + ' '.join(str(x) for x in table))
+                for word in aggregation_words:
+                    if ' COUNT' in aggregation_words:
+                        print("SELECT" + ' '.join(str(x) for x in aggregation_words) + "(department_id)")
+                        print("FROM" + ' '.join(str(x) for x in table))
+                    else:
+                        print("SELECT" + ' '.join(str(x) for x in aggregation_words) + "(" + ' '.join(str(x) for x in attrDept) + " )")
+                        print("FROM" + ' '.join(str(x) for x in table))
+
 
             if not aggregation_words:
-                print("select" + ' '.join(str(x) for x in attrDept))
-                print("from" + ' '.join(str(x) for x in table))
+                print("SELECT" + ','.join(str(x) for x in attrDept))
+                print("FROM" + ' '.join(str(x) for x in table))
 
 elif ' dependent' in table:
     attrDepend = []
@@ -150,12 +164,17 @@ elif ' dependent' in table:
                    print(aggregation_words)
 
             if aggregation_words:
-                print("select" + ' '.join(str(x) for x in aggregation_words) + " (" + ' '.join(str(x) for x in attrDepend) + " )")
-                print("from" + ' '.join(str(x) for x in table))
+                for word in aggregation_words:
+                    if ' COUNT' in aggregation_words:
+                        print("SELECT" + ' '.join(str(x) for x in aggregation_words) + "(dependent_id)")
+                        print("FROM" + ' '.join(str(x) for x in table))
+                    else:
+                        print("SELECT" + ' '.join(str(x) for x in aggregation_words) + "(" + ' '.join(str(x) for x in attrDepend) + " )")
+                        print("FROM" + ' '.join(str(x) for x in table))
 
             if not aggregation_words:
-                print("select" + ' '.join(str(x) for x in attrDepend))
-                print("from" + ' '.join(str(x) for x in table))
+                print("SELECT" + ','.join(str(x) for x in attrDepend))
+                print("FROM" + ' '.join(str(x) for x in table))
 
 elif ' job' in table:
     attrJob = []
@@ -179,12 +198,17 @@ elif ' job' in table:
                    print(aggregation_words)
 
             if aggregation_words:
-                print("select" + ' '.join(str(x) for x in aggregation_words) + " (" + ' '.join(str(x) for x in attrJob) + " )")
-                print("from" + ' '.join(str(x) for x in table))
+                for word in aggregation_words:
+                    if ' COUNT' in aggregation_words:
+                        print("SELECT" + ' '.join(str(x) for x in aggregation_words) + "(job_id)")
+                        print("FROM" + ' '.join(str(x) for x in table))
+                    else:
+                        print("SELECT" + ' '.join(str(x) for x in aggregation_words) + "(" + ' '.join(str(x) for x in attrJob) + " )")
+                        print("FROM" + ' '.join(str(x) for x in table))
 
             if not aggregation_words:
-                print("select" + ' '.join(str(x) for x in attrJob))
-                print("from" + ' '.join(str(x) for x in table))
+                print("SELECT" + ','.join(str(x) for x in attrJob))
+                print("FROM" + ' '.join(str(x) for x in table))
 
 elif ' region' in table:
     attrRegion = []
@@ -208,12 +232,17 @@ elif ' region' in table:
                    print(aggregation_words)
 
             if aggregation_words:
-                print("select" + ' '.join(str(x) for x in aggregation_words) + " (" + ' '.join(str(x) for x in attrRegion) + " )")
-                print("from" + ' '.join(str(x) for x in table))
+                for word in aggregation_words:
+                    if ' COUNT' in aggregation_words:
+                        print("SELECT" + ' '.join(str(x) for x in aggregation_words) + "(region_id)")
+                        print("FROM" + ' '.join(str(x) for x in table))
+                    else:
+                        print("SELECT" + ' '.join(str(x) for x in aggregation_words) + "(" + ' '.join(str(x) for x in attrRegion) + " )")
+                        print("FROM" + ' '.join(str(x) for x in table))
 
             if not aggregation_words:
-                print("select" + ' '.join(str(x) for x in attrRegion))
-                print("from" + ' '.join(str(x) for x in table))
+                print("SELECT" + ','.join(str(x) for x in attrRegion))
+                print("FROM" + ' '.join(str(x) for x in table))
 
 elif ' country' in table:
     attrCountry = []
@@ -234,13 +263,17 @@ elif ' country' in table:
                 aggregation_words.append(emotion)
 
         if aggregation_words:
-            print("select" + ' '.join(str(x) for x in aggregation_words) + " (" + ' '.join(
-                str(x) for x in attrCountry) + " )")
-            print("from" + ' '.join(str(x) for x in table))
+            for word in aggregation_words:
+                if ' COUNT' in aggregation_words:
+                    print("SELECT" + ' '.join(str(x) for x in aggregation_words) + "(country_id)")
+                    print("FROM" + ' '.join(str(x) for x in table))
+                else:
+                    print("SELECT" + ' '.join(str(x) for x in aggregation_words) + "(" + ''.join(str(x) for x in attrCountry) + ")")
+                    print("FROM" + ' '.join(str(x) for x in table))
 
         if not aggregation_words:
-            print("select" + ' '.join(str(x) for x in attrCountry))
-            print("from" + ' '.join(str(x) for x in table))
+            print("SELECT" + ','.join(str(x) for x in attrCountry))
+            print("FROM" + ' '.join(str(x) for x in table))
 
 elif ' location' in table:
     attrLocation = []
@@ -261,11 +294,15 @@ elif ' location' in table:
                 aggregation_words.append(emotion)
 
         if aggregation_words:
-            print("select" + ' '.join(str(x) for x in aggregation_words) + " (" + ' '.join(
-                str(x) for x in attrLocation) + " )" 
-            print("from" + ' '.join(str(x) for x in table))
+            for word in aggregation_words:
+                if ' COUNT' in aggregation_words:
+                    print("SELECT" + ' '.join(str(x) for x in aggregation_words) + "(location_id)")
+                    print("FROM" + ' '.join(str(x) for x in table))
+                else:
+                    print("SELECT" + ' '.join(str(x) for x in aggregation_words) + "(" + ' '.join(str(x) for x in attrLocation) + " )")
+                    print("FROM" + ' '.join(str(x) for x in table))
 
         if not aggregation_words:
-            print("select" + ' '.join(str(x) for x in attrLocation))
-            print("from" + ' '.join(str(x) for x in table))
+            print("SELECT" + ','.join(str(x) for x in attrLocation))
+            print("FROM" + ' '.join(str(x) for x in table))
 
